@@ -5,8 +5,8 @@ where '#' and whitespace alternate in both rows and columns.
 The size of the chessboard should be n by n.
 Expected output for:
 ```
-c = chessboard()
-print(c)
+board = chessboard()
+print(board)
 ```
 is:
 ```
@@ -25,22 +25,22 @@ is:
 def main() -> None:
     """Main funcion of the module"""
 
-    def chessboard(n=8) -> str:
+    def chessboard(n: int = 8) -> str:
         """Creates a chessboard pattern."""
         return "\n".join(
             ["".join(["#" if (x + y) % 2 else " " for x in range(n)]) for y in range(n)]
         )
 
-    c = chessboard()
-    print(c, end="\n\n")
-    c = chessboard(3)
-    print(c, end="\n\n")
-    c = chessboard(4)
-    print(c, end="\n\n")
-    c = chessboard(17)
-    print(c, end="\n\n")
-    c = chessboard(20)
-    print(c, end="\n\n")
+    board: str = chessboard()
+    print(board, end="\n\n")
+    board = chessboard(3)
+    print(board, end="\n\n")
+    board = chessboard(4)
+    print(board, end="\n\n")
+    board = chessboard(17)
+    print(board, end="\n\n")
+    board = chessboard(20)
+    print(board, end="\n\n")
 
 
 if __name__ == "__main__":
