@@ -1,7 +1,7 @@
 """Write a function that calculates a fibonacci sequence."""
 
 
-def main():
+def main() -> None:
     """Main function of the module."""
 
     def calc_fibonacci(n: int) -> int:
@@ -12,14 +12,14 @@ def main():
             return 1
         return calc_fibonacci(n - 1) + calc_fibonacci(n - 2)
 
-    f = calc_fibonacci(0)
-    print(f, end="\n\n")
-    f = calc_fibonacci(1)
-    print(f, end="\n\n")
-    f = calc_fibonacci(7)
-    print(f, end="\n\n")
-    f = calc_fibonacci(12)
-    print(f, end="\n\n")
+    result: int = calc_fibonacci(0)
+    print(result, end="\n\n")
+    result = calc_fibonacci(1)
+    print(result, end="\n\n")
+    result = calc_fibonacci(7)
+    print(result, end="\n\n")
+    result = calc_fibonacci(12)
+    print(result, end="\n\n")
 
 
 if __name__ == "__main__":
