@@ -26,42 +26,45 @@ You win!
 from random import randint
 
 
+def get_prompt() -> int:
+    """Gets user prompt
+
+    Returns:
+    str: user's prompt
+    """
+
+    while True:
+        try:
+            prompt = int(input("Your guess: ").strip())
+            if not 1 <= prompt <= 100:
+                print("You must pick a number between 1 and 100!")
+                continue
+            break
+        except ValueError:
+            print("You must type in a number!")
+    return prompt
+
+
+def guess_number() -> None:
+    """Implements guess number game."""
+    guess_count = 1
+    number_to_guess = randint(1, 100)
+    print("Try and guess a random number between 1 and 100.")
+    user_prompt = get_prompt()
+    while user_prompt != number_to_guess:
+        if user_prompt > number_to_guess:
+            print("Too much!")
+            guess_count += 1
+            user_prompt = get_prompt()
+        if user_prompt < number_to_guess:
+            print("Too little!")
+            guess_count += 1
+            user_prompt = get_prompt()
+    print(f"You win! Number of guesses: {guess_count}")
+
+
 def main() -> None:
     """Main function of a module."""
-
-    def get_prompt() -> int:
-        """Gets user prompt
-
-        Returns:
-        str: user's prompt
-        """
-        while True:
-            try:
-                prompt = int(input("Your guess: ").strip())
-                if not 1 <= prompt <= 100:
-                    print("You must pick a number between 1 and 100!")
-                    continue
-                break
-            except ValueError:
-                print("You must type in a number!")
-        return prompt
-
-    def guess_number() -> None:
-        """Implements guess number game."""
-        guess_count = 1
-        number_to_guess = randint(1, 100)
-        print("Try and guess a random number between 1 and 100.")
-        user_prompt = get_prompt()
-        while user_prompt != number_to_guess:
-            if user_prompt > number_to_guess:
-                print("Too much!")
-                guess_count += 1
-                user_prompt = get_prompt()
-            if user_prompt < number_to_guess:
-                print("Too little!")
-                guess_count += 1
-                user_prompt = get_prompt()
-        print(f"You win! Number of guesses: {guess_count}")
 
     guess_number()
 

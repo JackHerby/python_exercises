@@ -39,28 +39,29 @@ The given control digit in the PESEL is 8, so the PESEL is incorrect."""
 from typing import List
 
 
-def main() -> None:
-    """Main function of the module."""
-
-    def validate_pesel(pesel: str) -> bool:
-        """Validates PESEL number."""
-        try:
-            if len(pesel) > 11:
-                print("PESEL must be 11 characters long.")
-                return False
-            control_digit: int = int(pesel[10])
-            pesel_digits: List[int] = [int(digit) for digit in pesel[:10]]
-            weights: List[int] = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
-            sum_of_products: int = sum(pesel_digits[n] * weights[n] for n in range(10))
-            modulo_result: int = sum_of_products % 10
-            result: int = 0 if modulo_result == 0 else 10 - modulo_result
-            return result == control_digit
-        except IndexError:
+def validate_pesel(pesel: str) -> bool:
+    """Validates PESEL number."""
+    try:
+        if len(pesel) > 11:
             print("PESEL must be 11 characters long.")
             return False
-        except ValueError:
-            print("PESEL should be a string consisting of 11 digits.")
-            return False
+        control_digit: int = int(pesel[10])
+        pesel_digits: List[int] = [int(digit) for digit in pesel[:10]]
+        weights: List[int] = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
+        sum_of_products: int = sum(pesel_digits[n] * weights[n] for n in range(10))
+        modulo_result: int = sum_of_products % 10
+        result: int = 0 if modulo_result == 0 else 10 - modulo_result
+        return result == control_digit
+    except IndexError:
+        print("PESEL must be 11 characters long.")
+        return False
+    except ValueError:
+        print("PESEL should be a string consisting of 11 digits.")
+        return False
+
+
+def main() -> None:
+    """Main function of the module."""
 
     # Checks PESEL provided in the task description.
     print(validate_pesel("44051401358"))

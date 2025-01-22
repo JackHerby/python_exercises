@@ -1,16 +1,18 @@
 """Write a function that calculates a fibonacci sequence."""
 
 
+def calc_fibonacci(n: int) -> int:
+    """Calculates fibonacci sequence for n."""
+
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return calc_fibonacci(n - 1) + calc_fibonacci(n - 2)
+
+
 def main() -> None:
     """Main function of the module."""
-
-    def calc_fibonacci(n: int) -> int:
-        """Calculates fibonacci sequence for n."""
-        if n == 0:
-            return 0
-        if n == 1:
-            return 1
-        return calc_fibonacci(n - 1) + calc_fibonacci(n - 2)
 
     result: int = calc_fibonacci(0)
     print(result, end="\n\n")
