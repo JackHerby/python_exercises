@@ -3,7 +3,6 @@
 
 def calc_fibonacci(n: int) -> int:
     """Calculates fibonacci sequence for n."""
-
     if n == 0:
         return 0
     if n == 1:
@@ -13,7 +12,6 @@ def calc_fibonacci(n: int) -> int:
 
 def main() -> None:
     """Main function of the module."""
-
     result: int = calc_fibonacci(0)
     print(result, end="\n\n")
     result = calc_fibonacci(1)

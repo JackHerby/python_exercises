@@ -11,14 +11,14 @@ def get_user_input() -> int:
     """Returns user's feedback on computer's guess.
     Provides optins to choose from: 1, 2, or 3.
 
-    :return: The chosen option
-    :rtype: int
+    Returns
+    -------
+    int
+        Option's index representing user's choice.
     """
-
     options = {1: "Too much", 2: "Too little", 3: "That's correct!"}
     print(", ".join(f"{key}, {value}" for key, value in options.items()))
     print()
-
     while True:
         try:
             answer = int(input("Your answer: "))
@@ -34,10 +34,17 @@ def get_user_input() -> int:
 def calculate_answer(upper_bound: int, lower_bound: int) -> int:
     """A binary search algorithm to guess the number.
 
-    :param upper_bound: The current upper limit of the search range.
-    :param lower_bound: The current lower limit of the search range.
-    :return: The guessed number.
-    :rtype: int
+    Parameters
+    ----------
+    upper_bound : int
+        The current upper limit of the search range.
+    lower_bound : int
+        The current lower limit of the search range.
+
+    Returns
+    -------
+    int
+        Comuter's guess calculated with binary search algorithm.
     """
     return (upper_bound - lower_bound) // 2 + lower_bound
 
@@ -48,11 +55,9 @@ def main() -> None:
         "Think of a number between 1 and  1000. I'll guess it in no more than 10 steps."
     )
     print("Press enter to continue.")
-
     upper_bound = 1000
     lower_bound = 0
     step = 1
-
     while step <= 10:
         print()
         guess = calculate_answer(upper_bound, lower_bound)

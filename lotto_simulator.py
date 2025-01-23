@@ -27,10 +27,11 @@ from typing import List, Set
 def get_number() -> int:
     """Gets and validates a number from the user.
 
-    Returns:
-    int: user's chosen number
+    Returns
+    -------
+    int
+        User's chosen number.
     """
-
     while True:
         try:
             number = int(input("Pick a number: ").strip())
@@ -45,8 +46,10 @@ def get_numbers() -> List[int]:
     Checks wether the number has already been picked.
     Sorts the list in ascending order.
 
-    Returns:
-    list[int]: list of six unique numbers
+    Returns
+    -------
+    list[int]
+        List of six unique numbers.
     """
     numbers: List[int] = []
     while len(numbers) < 6:
@@ -65,8 +68,10 @@ def get_numbers() -> List[int]:
 def draw_numbers() -> List[int]:
     """Generates six random unique numbers between 1 and 50 in ascending order.
 
-    Returns:
-    list[int]: list of six random unique numbers
+    Returns
+    -------
+    list[int]
+        List of six random unique numbers.
     """
     numbers = sample(range(1, 50), k=6)
     numbers.sort()
@@ -76,15 +81,16 @@ def draw_numbers() -> List[int]:
 def print_numbers(numbers: List[int]):
     """Displays a list of numbers.
 
-    Parameters:
-    numbers (list[int]): list of numbers to display
+    Parameters
+    ----------
+    numbers : list[int]
+        List of numbers to display.
     """
     print(", ".join([str(number) for number in numbers]))
 
 
 def main() -> None:
     """Main function."""
-
     user_numbers: List[int] = get_numbers()
     print("You've chosen: ", end=" ")
     print_numbers(user_numbers)

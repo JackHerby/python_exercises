@@ -62,7 +62,6 @@ def validate_pesel(pesel: str) -> bool:
 
 def main() -> None:
     """Main function of the module."""
-
     # Checks PESEL provided in the task description.
     print(validate_pesel("44051401358"))
     # Other examples.

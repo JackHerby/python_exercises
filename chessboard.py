@@ -4,12 +4,11 @@ The function should return a multi-line chessboard pattern consisting of '#' and
 where '#' and whitespace alternate in both rows and columns.
 The size of the chessboard should be n by n.
 Expected output for:
-```
+
 board = chessboard()
 print(board)
-```
+
 is:
-```
 # # # # 
  # # # #
 # # # # 
@@ -18,21 +17,18 @@ is:
  # # # #
 # # # # 
  # # # # 
-```
 """
 
 
 def chessboard(n: int = 8) -> str:
     """Creates a chessboard pattern."""
-
     return "\n".join(
         ["".join(["#" if (x + y) % 2 else " " for x in range(n)]) for y in range(n)]
     )
 
 
 def main() -> None:
-    """Main funcion of the module"""
-
+    """Main funcion of the module."""
     board: str = chessboard()
     print(board, end="\n\n")
     board = chessboard(3)

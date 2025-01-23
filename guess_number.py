@@ -29,10 +29,11 @@ from random import randint
 def get_prompt() -> int:
     """Gets user prompt
 
-    Returns:
-    str: user's prompt
+    Returns
+    -------
+    str
+        User's prompt
     """
-
     while True:
         try:
             prompt = int(input("Your guess: ").strip())
@@ -65,7 +66,6 @@ def guess_number() -> None:
 
 def main() -> None:
     """Main function of a module."""
-
     guess_number()
 
 
