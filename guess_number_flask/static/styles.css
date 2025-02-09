@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: dimgray;
+    height: 100%;
+}
+
+h1,
+h2,
+p,
+button {
+    color: white;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+p {
+    font-size: x-large;
+}
+
+form {
+    display: inherit;
+    justify-content: center;
+}
+
+button {
+    height: 50px;
+    width: 150px;
+    font-size: large;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+button:hover {
+    color: lightslategray;
+    background-color: white;
+}
+
+.active_btn {
+    color: lightslategray;
+    background-color: white;
+}
+
+.container {
+    display: inherit;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    height: 800px;
+    width: 600px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: lightslategray;
+    padding: 15px;
+}
