@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guess Number</title>
+        <link rel="stylesheet" href="static/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Step: {{ step }}</h1>
+            <h2>My guess: {{ guess }}</h2>
+            <form action="" method="POST">
+                <button name="button" value="too_much">too much</button>
+                <button name="button" value="too_little">too little</button>
+                <button name="button" value="guessed">correct</button>
+                <input type="hidden" name="upper_bound" value="{{ upper_bound }}">
+                <input type="hidden" name="lower_bound" value="{{ lower_bound }}">
+                <input type="hidden" name="step" value="{{ step }}">
+            </form>
+        </div>
+    </body>
+</html>

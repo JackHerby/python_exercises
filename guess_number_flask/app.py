@@ -32,5 +32,53 @@ def home() -> Response | str:
     return render_template("welcome.html")
 
 
+@app.route("/game", methods=["GET", "POST"])
+def main() -> Response | str:
+    """Executes the number guessing game"""
+    if request.method == "POST":
+        upper_bound = int(request.form["upper_bound"])
+        lower_bound = int(request.form["lower_bound"])
+        step = int(request.form["step"]) + 1
+        guess = calculate_answer(upper_bound, lower_bound)
+        user_input = request.form["button"]
+        if user_input == "too_much":
+            upper_bound = guess
+            guess = calculate_answer(upper_bound, lower_bound)
+            return render_template(
+                "game.html",
+                upper_bound=upper_bound,
+                lower_bound=lower_bound,
+                step=step,
+                guess=guess,
+            )
+        elif user_input == "too_little":
+            lower_bound = guess
+            guess = calculate_answer(upper_bound, lower_bound)
+            return render_template(
+                "game.html",
+                upper_bound=upper_bound,
+                lower_bound=lower_bound,
+                step=step,
+                guess=guess,
+            )
+        elif user_input == "guessed":
+            step = int(request.form["step"])
+            return redirect(url_for("game_over", step=step))
+    return render_template(
+        "game.html", upper_bound=1000, lower_bound=0, step=1, guess=500
+    )
+
+
+@app.route("/game_over", methods=["GET", "POST"])
+def game_over() -> Response | str:
+    """End game screen
+    Press button to restart the game.
+    """
+    if request.method == "POST":
+        return redirect("/")
+    step = int(request.args.get("step") or 0)
+    return render_template("game_over.html", step=step)
+
+
 if __name__ == "__main__":
     app.run()
