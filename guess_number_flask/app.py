@@ -17,7 +17,7 @@ def calculate_answer(upper_bound: int, lower_bound: int) -> int:
     Returns
     -------
     int
-        Comuter's guess calculated with binary search algorithm.
+        Computer's guess calculated with binary search algorithm.
     """
     return (upper_bound - lower_bound) // 2 + lower_bound
 

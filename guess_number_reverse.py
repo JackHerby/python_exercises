@@ -9,7 +9,7 @@ The player's task will be to respond with "Too small," "Too big," or "You win."
 
 def get_user_input() -> int:
     """Returns user's feedback on computer's guess.
-    Provides optins to choose from: 1, 2, or 3.
+    Provides options to choose from: 1, 2, or 3.
 
     Returns
     -------
@@ -44,7 +44,7 @@ def calculate_answer(upper_bound: int, lower_bound: int) -> int:
     Returns
     -------
     int
-        Comuter's guess calculated with binary search algorithm.
+        Computer's guess calculated with binary search algorithm.
     """
     return (upper_bound - lower_bound) // 2 + lower_bound
 

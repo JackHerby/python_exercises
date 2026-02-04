@@ -43,7 +43,7 @@ def get_number() -> int:
 
 def get_numbers() -> List[int]:
     """Creates a list of 6 numbers picked by the user.
-    Checks wether the number has already been picked.
+    Checks whether the number has already been picked.
     Sorts the list in ascending order.
 
     Returns

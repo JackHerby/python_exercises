@@ -1,7 +1,7 @@
 """
-Write a fucntion named `chessboard`, that takes an optional parameter `n` with a default vaule of 8.
-The function should return a multi-line chessboard pattern consisting of '#' and ' ' (whitespace),
-where '#' and whitespace alternate in both rows and columns.
+Write a function named `chessboard`, that takes an optional parameter `n` with a default value of 8.
+The function should return a multi-line chessboard pattern consisting of '#' and ' ' (white space),
+where '#' and white space alternate in both rows and columns.
 The size of the chessboard should be n by n.
 Expected output for:
 
@@ -9,14 +9,14 @@ board = chessboard()
 print(board)
 
 is:
-# # # # 
+# # # #
  # # # #
-# # # # 
+# # # #
  # # # #
-# # # # 
+# # # #
  # # # #
-# # # # 
- # # # # 
+# # # #
+ # # # #
 """
 
 
@@ -28,7 +28,7 @@ def chessboard(n: int = 8) -> str:
 
 
 def main() -> None:
-    """Main funcion of the module."""
+    """Main function of the module."""
     board: str = chessboard()
     print(board, end="\n\n")
     board = chessboard(3)
