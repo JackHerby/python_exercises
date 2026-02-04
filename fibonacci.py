@@ -1,8 +1,8 @@
-"""Write a function that calculates a fibonacci sequence."""
+"""Write a function that calculates a Fibonacci sequence."""
 
 
 def calc_fibonacci(n: int) -> int:
-    """Calculates fibonacci sequence for n."""
+    """Calculates Fibonacci sequence for n."""
     if n == 0:
         return 0
     if n == 1:
